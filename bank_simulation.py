@@ -46,20 +46,20 @@ def find_minimal_queue(queue_list):
         return found_index
 
 def insert_new_event(new_event, event_queue):
-    #print("insert new event type = " + str(new_event.get_event_type()) + " occur_time = " + str(new_event.get_occur_time()))
+    print("insert new event type = " + str(new_event.get_event_type()) + " occur_time = " + str(new_event.get_occur_time()))
     for value in range(0, len(event_queue)):
         if event_queue[value].get_occur_time() > new_event.get_occur_time():
             event_queue.insert(value, new_event)
             #print("insert new event at : " + str(value))
             return None
     event_queue.append(new_event)
-    #print("insert new event at end : " + str(len(event_queue)))
+    print("insert new event at end : " + str(len(event_queue)))
 
 def customerarrived(occur_time, queue_list, event_queue):
     new_customer = Customer(occur_time)
     queue_index = find_minimal_queue(queue_list)
-    #print("customerarrived : " + str(occur_time))
-    #print("find_minimal_queue  : " + str(queue_index + 1))
+    print("customerarrived : " + str(occur_time))
+    print("find_minimal_queue  : " + str(queue_index + 1))
     new_customer.set_queqe_number(queue_index+1)
     queue_list[queue_index].append(new_customer)
     if len(queue_list[queue_index]) == 1:
@@ -72,7 +72,7 @@ def customerarrived(occur_time, queue_list, event_queue):
         insert_new_event(new_event, event_queue)
 
 def customerdeparture(event, queue_list, event_queue, customers):
-    #print("this customer departure at : " + str(event.get_occur_time()) + " from queue : " + str(event.get_event_type()))
+    print("this customer departure at : " + str(event.get_occur_time()) + " from queue : " + str(event.get_event_type()))
     queue_index = event.get_event_type() - 1;
     queue_list[queue_index][0].set_end_process_time(event.get_occur_time())
     customers.append(queue_list[queue_index][0])
