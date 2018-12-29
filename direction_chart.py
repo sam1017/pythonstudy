@@ -35,6 +35,8 @@ def add_book_to_books_index(book_name, books_index):
         print("this book have exisit ! : " + book_name)
     else:
         insert_key = str(randint(1000,9999))
+        while insert_key in books_index.keys():
+            insert_key = str(randint(1000,9999))
         print("key = " + insert_key)
         books_index[insert_key] = book_name
         print("value = " + book_name)
