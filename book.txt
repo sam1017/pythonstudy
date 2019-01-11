@@ -4,3 +4,5 @@ Fundamentals of Data Structure
 The Design and Analysis of Computer Algorithms
 Introduction to Numerical Analysis
 Numerical Analysis
+Discover the Data Structure
+Data analysis example
