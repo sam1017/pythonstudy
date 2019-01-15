@@ -10,9 +10,6 @@ class matrix():
             print(rows)
 
     def matrix_T(self):
-        if self.row != self.column:
-            print("this matrix have no matrix_T ")
-            return None
         matrix_view_T = []
         for i in range(0, self.column):
             rows = []
@@ -44,7 +41,7 @@ def multiply(matrix_A, matrix_B):
         matrix_view.append(rows)
     return matrix(matrix_view)
 
-matrix_view = [[1,2,3,5,9],[4,5,6,4,2],[7,8,9,2,1],[4,2,8,4,3],[7,5,3,2,9]]
+matrix_view = [[0, 12, 19, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[-3, 0, 0, 0, 0, 14, 0],[0, 0, 24, 0, 0, 0, 0],[0, 18, 0, 0, 0, 0, 0],[15, 0, 0, -7, 0, 0, 0]]
 my_matrix = matrix(matrix_view)
 my_matrix.show()
 matrix_view_T = my_matrix.matrix_T()
