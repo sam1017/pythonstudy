@@ -31,9 +31,6 @@ class matrix():
         return self.column
 
 def multiply(matrix_A, matrix_B):
-    if matrix_A.get_matrix_column() != matrix_B.get_matrix_row():
-        print("matrix_A's column not equal matrix_B's row  can't multipy ")
-        return None
     matrix_view = []
     matrix_A_view = matrix_A.get_matrix();
     matrix_B_view = matrix_B.get_matrix();
