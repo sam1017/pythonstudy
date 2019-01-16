@@ -1,3 +1,4 @@
+import time
 class sparse_matrix():
     def __init__(self, sparse_matrix_view, matrix_setting):
         self.sparse_matrix_view = sparse_matrix_view
@@ -153,5 +154,8 @@ my_sparse_matrix = sparse_matrix(sparse_matrix_view, matrix_setting)
 my_sparse_matrix.show()
 my_sparse_matrix_T = my_sparse_matrix.sparse_matrix_T()
 my_sparse_matrix_T.show()
+start = time.clock()
 matrix_A = sparse_matrix_multiply(my_sparse_matrix, my_sparse_matrix_T)
+t = time.clock() - start
+print(t)
 matrix_A.show()

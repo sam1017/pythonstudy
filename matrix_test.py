@@ -1,3 +1,4 @@
+import time
 class matrix():
     def __init__(self, matrix_view):
         self.matrix_view = matrix_view
@@ -48,6 +49,8 @@ matrix_view_T = my_matrix.matrix_T()
 if matrix_view_T != None:
     my_matrix_T = matrix(matrix_view_T)
     my_matrix_T.show()
-
+start = time.clock()
 matrix_A = multiply(my_matrix, my_matrix_T)
+t = time.clock() - start
+print(t)
 matrix_A.show()
