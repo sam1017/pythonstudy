@@ -68,11 +68,46 @@ class binary_tree():
                     ascending_array.append(value)
                     self.right_binary_tree = binary_tree(ascending_array,right_item_path)
 
+    def get_binary_tree_depth(self):
+        depth = 1
+        if self.if_have_left_binary_tree() == False and self.if_have_right_binary_tree() == False:
+            return depth
+        left_depth = 0
+        right_depth = 0
+        if self.if_have_left_binary_tree():
+            left_depth = depth + self.left_binary_tree.get_binary_tree_depth()
+        if self.if_have_right_binary_tree():
+            right_depth = depth + self.right_binary_tree.get_binary_tree_depth()
+        if left_depth > right_depth:
+            return left_depth
+        else:
+            return right_depth
 
+    def check_binary_tree_if_contain_value(self, value):
+        if self.value == value:
+            print("find " + str(value) + " in this tree! ")
+            return True
+        else:
+            if value < self.value:
+                if self.if_have_left_binary_tree():
+                    return self.left_binary_tree.check_binary_tree_if_contain_value(value)
+                else:
+                    print("Can not find " + str(value) + " in this tree !")
+                    return False
+            elif value > self.value:
+                if self.if_have_right_binary_tree():
+                    return self.right_binary_tree.check_binary_tree_if_contain_value(value)
+                else:
+                    print("Can not find " + str(value) + " in this tree !")
+                    return False
 
 ascending_array = [2, 4, 6, 9, 12, 15, 28]
 item_path = [0]
 my_binary_tree = binary_tree(ascending_array,item_path)
-my_binary_tree.show()
+#my_binary_tree.show()
+print("my_binary_tree depth = " + str(my_binary_tree.get_binary_tree_depth()))
 my_binary_tree.add_item(18)
-my_binary_tree.show()
+#my_binary_tree.show()
+print("after add new item my_binary_tree depth = " + str(my_binary_tree.get_binary_tree_depth()))
+my_binary_tree.check_binary_tree_if_contain_value(12)
+my_binary_tree.check_binary_tree_if_contain_value(17)
