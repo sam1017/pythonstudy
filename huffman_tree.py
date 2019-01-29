@@ -54,7 +54,8 @@ def produce_new_huffman_tree(ascending_binary_forest):
         print("ascending_binary_forest len " + str(len(ascending_binary_forest)))
         return produce_new_huffman_tree(ascending_binary_forest)
 
-list_value = [15,16,17,25,27,29,33,37]
+list_value = [5,29,7,8,14,23,3,11]
+list_value.sort()
 ascending_binary_forest = []
 for value in list_value:
     ascending_binary_forest.append(huffman_tree(value))
