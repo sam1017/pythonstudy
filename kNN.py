@@ -68,7 +68,10 @@ def datingClassTest():
     normMat, ranges, minVals = autoNorm(datingDataMat)
     print(normMat)
     m = normMat.shape[0]
+    print("datingClassTest m = " + str(m))
     numTestVecs = int(m*hoRatio)
+    print("numTestVecs = ")
+    print(numTestVecs)
     errorCount = 0.0
     for i in range(numTestVecs):
         classifierResult = classify0(normMat[i,:],normMat[numTestVecs:m,:],datingLabels[numTestVecs:m],3)

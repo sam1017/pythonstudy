@@ -17,5 +17,5 @@ for datingLabel in datingLabels:
     elif datingLabel == 3:
         cValue.append('b')
 
-ax.scatter(datingDataMat[:,0], datingDataMat[:,1], c=cValue, marker='.')
+#ax.scatter(datingDataMat[:,0], datingDataMat[:,1], c=cValue, marker='.')
 #plt.show()
