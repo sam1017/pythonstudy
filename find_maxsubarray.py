@@ -9,23 +9,29 @@ def sum_value(values):
     return sum
 
 def find_maxmiddlevalue(values, middle):
-    find_first = 0
-    first_sum = 0
-    for i in range(0,middle+1):
-        if sum_value(values[i:middle]) > first_sum:
+    find_first = -1
+    first_sum = -9999999
+    total= 0;
+    print("begin find_maxmiddlevalue")
+    print(values)
+    for i in range(0,middle)[::-1]:
+        total = total + values[i]
+        if total > first_sum:
             find_first = i
-            first_sum = sum_value(values[i:middle])
+            first_sum = total
     print(str(find_first) + " sum = " + str(first_sum))
     find_second = 0
-    second_sum = 0
-    for j in range(middle+1, len(values)+1):
-        if sum_value(values[middle:j]) > second_sum:
+    second_sum = -99999
+    total = 0
+    for j in range(middle, len(values)):
+        total = total + values[j]
+        if total > second_sum:
             find_second = j
-            second_sum = sum_value(values[middle:j])
+            second_sum = total
     print(str(find_second) + "sum = " + str(second_sum))
-    print(find_maxmiddlevalue)
-    print(values[find_first:find_second])
-    return values[find_first:find_second]
+    print("end find_maxmiddlevalue")
+    print(values[find_first:find_second+1])
+    return values[find_first:find_second+1]
 
 def find_maxsubarray(values):
     print("find_maxsubarray ")
