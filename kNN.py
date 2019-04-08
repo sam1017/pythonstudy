@@ -82,8 +82,8 @@ def datingClassTest():
 
 def classifyPerson():
     resultList = ['not at all', 'in small doses', 'in large doses']
-    percentTats = float(raw_input("percentage of time spent playing video games?"))
     ffMiles = float(raw_input("frequent flier miles earned per year?"))
+    percentTats = float(raw_input("percentage of time spent playing video games?"))
     iceCream = float(raw_input("liters of ice cream consumed per year?"))
     datingDataMat, datingLabels = file2matrix('datingTestSet2.txt')
     normMat, ranges, minVals = autoNorm(datingDataMat)
